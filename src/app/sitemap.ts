@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllProjects } from "@/lib/projects";
+export const dynamic = "force-static";
 
 const SITE_URL = "https://anakterubuk.tech";
 
