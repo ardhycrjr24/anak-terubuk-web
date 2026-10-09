@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #faf9f6;
+  --color-raised: #ffffff;
+  --color-ink: #16161a;
+  --color-muted: #5c5e66;
+  --color-line: #e4e1d9;
+  --color-accent: #2a57cc;
+  --color-accent-ink: #1f4bc4;
+  --color-accent-wash: rgba(42, 87, 204, 0.06);
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+a {
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Smooth, restrained editorial transitions */
+.link-fade {
+  transition:
+    color 200ms ease-out,
+    opacity 200ms ease-out,
+    background-color 200ms ease-out,
+    border-color 200ms ease-out;
+}
+
+/* Soft wash hover for index rows — calm highlight, never a glow */
+.row-smooth:hover {
+  background-color: var(--color-accent-wash);
+}
+
+/* MDX project body */
+.prose-studio {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 68ch;
+}
+
+.prose-studio > * + * {
+  margin-top: 1.25em;
+}
+
+.prose-studio h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--color-line);
+}
+
+.prose-studio p {
+  color: var(--color-ink);
+}
+
+.prose-studio ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+.prose-studio li + li {
+  margin-top: 0.5em;
+}
+
+.prose-studio strong {
+  font-weight: 600;
+}
+
+.prose-studio a {
+  color: var(--color-accent-ink);
+  text-decoration: underline;
+}
+
+.prose-studio code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-raised);
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

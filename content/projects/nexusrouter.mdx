@@ -1,0 +1,51 @@
+---
+title: NexusRouter
+slug: nexusrouter
+description: Self-hostable AI gateway for routing and managing LLM requests.
+longDescription: One local endpoint that speaks OpenAI- and Anthropic-compatible APIs, routing requests across providers with fallback, budgets, and guardrails.
+category:
+  - AI
+  - Developer Tools
+status: IN DEVELOPMENT
+year: 2026
+featured: true
+stack:
+  - Go
+  - Docker
+externalUrl: https://nexusrouter.com
+repositoryUrl: https://github.com/ardhycrjr24/nexusrouter
+---
+
+## Overview
+
+NexusRouter is a self-hostable AI gateway. Tools that talk to LLM APIs point at
+one local endpoint, and the gateway handles the rest: routing each request to the
+configured provider and model, falling back to a backup when a provider fails or
+a limit is hit.
+
+## Why it exists
+
+Teams using several AI tools end up spreading API keys, quotas, and provider
+choices across every application. NexusRouter exists to put that in one place:
+one endpoint, one set of keys, one surface for watching usage and cost.
+
+## What is being built
+
+- A single OpenAI- and Anthropic-compatible endpoint for all connected tools.
+- Request routing across providers and models, with automatic fallback.
+- Per-key budgets with hard limits, plus rate limiting.
+- Content guardrails, including PII recognition and prompt-injection detection.
+- Response caching and compression to reduce token usage.
+- A dashboard for keys, usage, and spending, with ready-made configuration
+  snippets for common AI coding tools.
+
+## Technology
+
+NexusRouter is built with Go and ships as a container image, so it runs anywhere
+a container runs — a laptop, a home server, or team infrastructure. It is
+open source under the MIT license.
+
+## Status
+
+In development. The repository is public and work continues there; the project
+site carries current documentation.
